@@ -10,5 +10,26 @@
   <%= @physician.speciality %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Street address</th>
+      <th>Zip code</th>
+      <th>Phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @physician.offices.each do |office| %>
+      <tr>
+        <td><%= office.street_address %></td>
+        <td><%= office.zip_code %></td>
+        <td><%= office.phone %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_physician_path(@physician) %> |
 <%= link_to 'Back', physicians_path %>
