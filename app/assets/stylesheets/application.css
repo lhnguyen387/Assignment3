@@ -19,7 +19,15 @@
     background-color: lightgray;
     text-align: left;
 }
-/*#table {
+#table {
     border: 1px solid black;
-    padding: 2px;
-}*/
+    padding: 5px;
+}
+tr:nth-child(even){
+    background-color: lightblue;
+    padding: 1px;
+}
+tr:nth-child(odd){
+    background-color: lightgray;
+    padding: 1px;
+}
