@@ -10,7 +10,10 @@
   <%= @physician.speciality %>
 </p>
 
-<table>
+<h3>
+  <strong>Office Locations:</strong>
+</h3>
+<table id="table">
   <thead>
     <tr>
       <th>Street address</th>
@@ -19,13 +22,33 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @physician.offices.each do |office| %>
       <tr>
         <td><%= office.street_address %></td>
         <td><%= office.zip_code %></td>
         <td><%= office.phone %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3>
+  <strong>Current Appointments:</strong>
+</h3>
+<table id="table">
+  <thead>
+    <tr>
+      <th>Patient Name</th>
+      <th>Appointment Date</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @physician.appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.visit %></td>
+        <td><%= appointment.patient.name %></td>
       </tr>
     <% end %>
   </tbody>
