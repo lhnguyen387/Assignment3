@@ -1,25 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @physician.name %>
+  <h3><strong>Name:</strong>
+  <%= @physician.name %></h3>
 </p>
 
 <p>
-  <strong>Speciality:</strong>
-  <%= @physician.speciality %>
+  <h3><strong>Speciality:</strong>
+  <%= @physician.speciality %></h3>
 </p>
 
 <h3>
   <strong>Office Locations:</strong>
 </h3>
-<table id="table">
+<table id="showtable">
   <thead>
     <tr>
       <th>Street address</th>
       <th>Zip code</th>
       <th>Phone</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
@@ -36,18 +35,18 @@
 <h3>
   <strong>Current Appointments:</strong>
 </h3>
-<table id="table">
+<table id="showtable">
   <thead>
     <tr>
       <th>Patient Name</th>
       <th>Appointment Date</th>
-      <th colspan="2"></th>
+      
     </tr>
   </thead>
   <tbody>
     <% @physician.appointments.each do |appointment| %>
       <tr>
-        <td><%= appointment.visit %></td>
+        <td><%= appointment.visit.to_formatted_s(:long) %></td>
         <td><%= appointment.patient.name %></td>
       </tr>
     <% end %>
